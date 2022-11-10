@@ -16,31 +16,24 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 import items from "./items";
-import { faBottleWater } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 let itemID = 0;
 
 const Catalogue = () => {
+
   return (
     <>
+      <p className="relative text-center">Artwork by <a href="https://ko-fi.com/velocipasta" rel="noreferrer" target="_blank"> <Icon className="inline" icon="simple-icons:kofi" /> <b>Velocipasta</b></a></p>
       <div className="grid portrait:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {items.map((item) => {
           return (
             <div
               style={{ color: item.color }}
-              className={`mx-4 my-4 bg-[rgba(127,54,150,0.45)] p-4 rounded-xl hover:scale-[1.1] transition-all text-center`}
-              key={item.name}
+              className={`mx-4 my-4 bg-[rgba(0,0,0,0.45)] p-4 rounded-full text-center`}
             >
-              <p
-                className={`hover:text-[${item.color}] font-['Pacifico'] text-2xl`}
-              >
-                <b>{item.name}</b>
-              </p>
-              <FontAwesomeIcon icon={faBottleWater} />
-              <p className={`font-['Poppins']`}>
-                <i>{item.description}</i>
-              </p>
+              <Image alt={item.description} src={`/potions/${item.icon}.png`} width="800" height="300" quality="100" />
             </div>
           );
         })}

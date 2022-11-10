@@ -20,6 +20,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBottleDroplet, faPaw } from "@fortawesome/free-solid-svg-icons";
 import { faBattleNet } from "@fortawesome/free-brands-svg-icons";
 import { useSpring, animated as a } from "react-spring";
+import Head from "next/head";
 
 const CatalogueComponent = React.lazy(() => import("./Catalogue"));
 
@@ -82,6 +83,15 @@ const Main = () => {
     },
   }));
 
+  const [dividerSpring, dividerSpringApi] = useSpring(() => ({
+    config: {
+      friction: 15,
+    },
+    from: {
+      opacity: 0,
+    },
+  }));
+
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
@@ -128,13 +138,13 @@ const Main = () => {
 
   const setPage = (page) => {
     contentSpringApi.start({
-      x: -100,
+      scale: 1.2,
       opacity: 0,
       config: { clamp: true },
       onRest: () => {
         setPageReact(page);
-        contentSpringApi.set({ x: 300 });
-        contentSpringApi.start({ x: 0, opacity: 1, config: { clamp: false } });
+        contentSpringApi.set({ scale: 0.8 });
+        contentSpringApi.start({ scale: 1, opacity: 1, config: { clamp: false } });
       },
     });
   };
@@ -165,8 +175,19 @@ const Main = () => {
     }
   };
 
+  const handleScroll = (e) => {
+    if (e.target.scrollTop > 0) {
+      dividerSpringApi.start({ opacity: 1 });
+    } else {
+      dividerSpringApi.start({ opacity: 0 });
+    }
+  }
+
   return (
     <>
+      <Head>
+        <title>Tori's Shampoos</title>
+      </Head>
       <div
         className="w-full h-full"
         onMouseEnter={(e) => handleMouse(e)}
@@ -182,6 +203,8 @@ const Main = () => {
           ></a.div>
         )}
         <div className="fixed w-full h-32 backdrop-blur-lg z-10"></div>
+        <a.div style={dividerSpring} className="fixed w-full h-32 backdrop-blur-lg z-10 border-b-2"></a.div>
+        <div className="absolute m-8">a</div>
         <div className="absolute m-8 w-full text-zinc-300">
           <a.div
             style={titleSpring}
@@ -221,7 +244,7 @@ const Main = () => {
           </a.div>
         </div>
         <a.div style={contentSpring} className="w-full fixed h-full">
-          <div className="absolute w-full h-full overflow-y-scroll">
+          <div onScroll={handleScroll} className="no-scrollbar absolute w-full h-full overflow-y-scroll">
             {page === 0 && (
               <div className="absolute top-36 text-center w-[60%] m-auto left-0 right-0 text-zinc-300">
                 <h1 className="text-4xl my-8 font-['Pacifico']">
@@ -237,11 +260,11 @@ const Main = () => {
                   <br />
                   Each bottle is only 10 Silver!
                 </p>
-                <img src="toroy.jpg" className="w-80 rounded-2xl m-auto" />
+                <img src="https://db17gxef1g90a.cloudfront.net/toroy.jpg" className="w-80 rounded-2xl m-auto" />
                 <p className="my-2">
                   <FontAwesomeIcon className="text-4xl" icon={faBattleNet} />
                   <span className="relative -top-1 mx-2">
-                    Toroy-WyrmrestAccord <FontAwesomeIcon icon={faPaw} />
+                    <b>Toroy-WyrmrestAccord</b>
                   </span>
                   <br />
                   <br />
@@ -249,11 +272,13 @@ const Main = () => {
               </div>
             )}
             {page === 1 && (
-              <div className="absolute w-[80%] m-auto left-0 right-0 h-full top-36 text-zinc-300">
-                <Suspense>
-                  <CatalogueComponent />
-                </Suspense>
-              </div>
+              <>
+                <div className="absolute w-[80%] m-auto left-0 right-0 h-full top-36 text-zinc-300">
+                  <Suspense>
+                    <CatalogueComponent />
+                  </Suspense>
+                </div>
+              </>
             )}
           </div>
         </a.div>
