@@ -2,73 +2,73 @@
   {
     "name": "Tori's Delights",
     "color": "#8c52fe",
-    "icon": "",
+    "icon": "purple",
     "description": "Lavender and Sweet Fruits"
   },
   {
     "name": "Eevee's Fluff",
     "color": "#a28a42",
-    "icon": "",
+    "icon": "light_pink",
     "description": "Peaches and Cream"
   },
   {
     "name": "Tenko's Bite",
     "color": "#1f6601",
-    "icon": "",
+    "icon": "dark_green",
     "description": "Sour Candied Apple and Caramel"
   },
   {
     "name": "Garn's Desires",
     "color": "#7a4e27",
-    "icon": "",
+    "icon": "amber",
     "description": "Dark Chocolate and Sea Salted Caramel"
   },
   {
     "name": "Fira's Spice",
     "color": "#afe893",
-    "icon": "",
+    "icon": "light_green",
     "description": "Mountain Silversage and Ginger"
   },
   {
     "name": "Ain's Love",
     "color": "#004aad",
-    "icon": "",
+    "icon": "blue",
     "description": "Cherry and Merlot"
   },
   {
     "name": "Link's Thirst",
     "color": "#ff1616",
-    "icon": "",
+    "icon": "red",
     "description": "Strawberry Banana"
   },
   {
     "name": "Mochi's Blossoms",
     "color": "#1f6600",
-    "icon": "",
+    "icon": "green",
     "description": "Tropical Flowers and Kiwi"
   },
   {
     "name": "Bean's Cotton",
     "color": "#db7932",
-    "icon": "",
+    "icon": "orange",
     "description": "Blood Orange Cotton Candy"
   },
   {
     "name": "Cela's Grace",
     "color": "#c3e6f8",
-    "icon": "",
+    "icon": "light_blue",
     "description": "Fresh Rain on Grassy Fields"
   },
   {
     "name": "Tiyko's Bliss",
     "color": "#fddc3a",
-    "icon": "",
+    "icon": "yellow",
     "description": "Vanilla and Blackberries"
   },
   {
     "name": "Jaksirro's Focus",
     "color": "#bf69bb",
-    "icon": "",
+    "icon": "light_purple",
     "description": "Citrus Mint and Eucalyptus"
   }
 ]
