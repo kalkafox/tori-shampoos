@@ -21,6 +21,7 @@ import { faBottleDroplet, faPaw } from "@fortawesome/free-solid-svg-icons";
 import { faBattleNet } from "@fortawesome/free-brands-svg-icons";
 import { useSpring, animated as a } from "react-spring";
 import Head from "next/head";
+import Image from "next/image";
 
 const CatalogueComponent = React.lazy(() => import("./Catalogue"));
 
@@ -126,7 +127,7 @@ const Main = () => {
     setTimeout(() => {
       setFinishLoaded(true);
     }, 1000);
-  }, [loaded]);
+  }, [loaded, loadSpringApi, contentSpringApi, titleSpringApi, navPositionSpringApi, backgroundSpringApi]);
 
   useEffect(() => {
     if (windowSize.width > 800) {
@@ -134,7 +135,7 @@ const Main = () => {
     } else {
       navPositionSpringApi.start({ x: 100 });
     }
-  }, [windowSize]);
+  }, [windowSize, navPositionSpringApi]);
 
   const setPage = (page) => {
     contentSpringApi.start({
@@ -186,7 +187,7 @@ const Main = () => {
   return (
     <>
       <Head>
-        <title>Tori's Shampoos</title>
+        <title>Tori&apos;s Shampoos</title>
       </Head>
       <div
         className="w-full h-full"
@@ -260,7 +261,7 @@ const Main = () => {
                   <br />
                   Each bottle is only 10 Silver!
                 </p>
-                <img src="https://db17gxef1g90a.cloudfront.net/toroy.jpg" className="w-80 rounded-2xl m-auto" />
+                <Image src="/toroy.jpg" className="w-80 rounded-2xl m-auto" width="640" height="760" quality="75" />
                 <p className="my-2">
                   <FontAwesomeIcon className="text-4xl" icon={faBattleNet} />
                   <span className="relative -top-1 mx-2">
