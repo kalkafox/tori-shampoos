@@ -205,7 +205,6 @@ const Main = () => {
         )}
         <div className="fixed w-full h-32 backdrop-blur-lg z-10"></div>
         <a.div style={dividerSpring} className="fixed w-full h-32 backdrop-blur-lg z-10 border-b-2"></a.div>
-        <div className="absolute m-8">a</div>
         <div className="absolute m-8 w-full text-zinc-300">
           <a.div
             style={titleSpring}

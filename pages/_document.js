@@ -4,8 +4,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const Document = () => (
     <Html>
         <Head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta charSet="UTF-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="#B168B9" data-react-helmet="true" name="theme-color" />
             <meta name="og:type" content="website" />
             <meta
                 name="og:description"
@@ -17,7 +18,7 @@ const Document = () => (
                 content="https://db17gxef1g90a.cloudfront.net/toroy.jpg"
             />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
             <link
                 href="https://fonts.googleapis.com/css2?family=Raleway&family=Rubik+Marker+Hatch&display=swap&family=Pacifico&display=swap&family=Poppins&display=swap"
                 rel="stylesheet"
