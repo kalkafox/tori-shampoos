@@ -32,6 +32,7 @@ const Catalogue = () => {
             <div
               style={{ color: item.color }}
               className={`mx-4 my-4 bg-[rgba(0,0,0,0.45)] p-4 rounded-full text-center`}
+              key={item.name}
             >
               <Image alt={item.description} src={`/potions/${item.icon}.png`} width="800" height="300" quality="100" />
             </div>
