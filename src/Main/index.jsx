@@ -252,7 +252,7 @@ const Main = () => {
                   What are they~?
                 </h1>
                 <p className="my-12 portrait:text-sm text-xl font-['Raleway'] portrait:w-[95%]">
-                  Tori's Home-Made Shampoos™ are potion sized bottles made by
+                  Tori&apos;s Home-Made Shampoos™ are potion sized bottles made by
                   the little purple Fox himself. Each one is guaranteed to keep
                   your fur, or hair, nice and soft, shiny, and smelling great
                   for days. On average a bottle will get three uses. Be sure to
