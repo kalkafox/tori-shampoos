@@ -261,7 +261,7 @@ const Main = () => {
                   <br />
                   Each bottle is only 10 Silver!
                 </p>
-                <Image src="/toroy.jpg" className="w-80 rounded-2xl m-auto" width="640" height="760" quality="75" />
+                <Image src="https://db17gxef1g90a.cloudfront.net/toroy.jpg" className="w-80 rounded-2xl m-auto" width="640" height="760" quality="75" />
                 <p className="my-2">
                   <FontAwesomeIcon className="text-4xl" icon={faBattleNet} />
                   <span className="relative -top-1 mx-2">
@@ -284,7 +284,7 @@ const Main = () => {
           </div>
         </a.div>
         <a.div
-          style={{ backgroundImage: "url(lavender.jpg)", ...backgroundSpring }}
+          style={{ backgroundImage: "url(https://db17gxef1g90a.cloudfront.net/lavender.jpg)", ...backgroundSpring }}
           className="fixed w-screen h-screen -z-50 bg-cover"
         ></a.div>
         <div
